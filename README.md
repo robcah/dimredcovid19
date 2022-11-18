@@ -4,8 +4,12 @@ Supporting materials for paper: Analysis and comprehensive lineage identificatio
 1. Install environment:\
 conda env create --file dimredcovid19.yml
 
-2. I there are throubles installing PaCMAP module, install module ANNOY with the WHL file:\
+2. If there are throubles installing PaCMAP module, install module ANNOY with the WHL file:\
 pip install annoy-1.17.0-cp310-cp310-win_amd64.whl
 
-3. Then run jupyter notebook for more instructions:\
+3. Activate environment and run jupyter notebook:\
+conda activate dimredcovid19
+jupyter notebook
+
+4. Follow the jupyter notebook for more instructions:\
 Dimensionality_Reduction_Covid19.ipynb
