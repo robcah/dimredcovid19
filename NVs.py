@@ -6,10 +6,15 @@ from itertools import combinations, product
 
 def seq_creation(x, alphabet=list('ACGT')):
     '''
-    Creation of random DNA sequences
+    Creation of random sequences
     '''
     
-    return ''.join(np.random.choice(alphabet, x))    
+    return ''.join(np
+                   .random
+                   .choice(alphabet, 
+                           x,
+                          )
+                  )    
 
 
 def NV(seq, alphabet=list('ACGT'), db_weights=True):
@@ -171,7 +176,7 @@ def PCNV(seq, alphabet=list('ACGT')):
     return pcnv
 
     
-def KMNV(seq, k=2, alphabet=list('ACGT'), return_words=False):
+def KMNV(seq, k=3, alphabet=list('ACGT')):
     '''
     K-Mer Natural Vectors
     Wen et al. 2014
@@ -180,30 +185,45 @@ def KMNV(seq, k=2, alphabet=list('ACGT'), return_words=False):
     
     L = len(seq)
     m = 2
-    km_seq = [''.join(w) for w in windowed(list(seq), k)]
-    words = [''.join(w) for w in product(alphabet, repeat=k)]
+    km_seq = [''.join(w) 
+              for w in windowed(list(seq), k)
+             ]
+    words = [''.join(w) 
+             for w in product(alphabet, repeat=k)
+            ]
 
-    def l(w): return [n for n, p in enumerate(
-                               [w==km for km in km_seq]) if p]
+    def l(w): return np.array([n for n, p 
+                               in enumerate([w==km 
+                                             for km 
+                                             in km_seq
+                                            ]
+                                           ) if p
+                              ]
+                             )
     def n(w): return len(l(w))
-    def µ(w): return np.mean(l(w))
-    def D(w): return (((l(w)-µ(w))**m).sum()/
-                      (n(w)**(m-1)*(L-k+1)**(m-1)))
+    def µ(w): return (np.mean(l(w)) 
+                      if n(w)!=0 
+                      else 0
+                     )
+    def D(w): return ((((l(w)-µ(w))**m
+                       ).sum()
+                       / (n(w)**(m-1)
+                          *(L-k+1)**(m-1)
+                         )
+                      )
+                      if n(w)!=0 
+                      else 0
+                     )
 
     funcs = [['n', n], ['µ', µ], ['D', D]]
     front_zeros = len(str(len(words)))
-    kmer_words = {str(i).zfill(front_zeros):w 
-                  for i, w in enumerate(sorted(words))}
-    
+    kmer_words = sorted(words)
     
     kmnv = dict()
     for name, func in funcs:
-        for i, word in kmer_words.items():
-            key = f'{name}_{i}'
+        for word in kmer_words:
+            key = f'{name}_{word}'
             kmnv[key] = func(word)
-            
-    if return_words:
-        return kmer_words, kmnv
     
     return kmnv
 
@@ -252,7 +272,10 @@ def CMNV(seq, alphabet=list('ACGT'), with_gaps=True):
     return cmnv
     
 
-def kmerCount(seq, k, alphabet=list('ACGT'), with_gaps=True):
+def KMC(seq, k, alphabet=list('ACGT'), with_gaps=True):
+    '''
+    k-mer Count
+    '''
     
     if not with_gaps:
         seq = seq.replace('-','')
@@ -261,7 +284,10 @@ def kmerCount(seq, k, alphabet=list('ACGT'), with_gaps=True):
     seq = [''.join(w) for w in windowed(list(seq), k)]
     return {key:sum([kmer==key for kmer in seq]) for key in words}
     
-def kmerProb(seq, k, with_gaps=True):
+def KMP(seq, k, with_gaps=True):
+    '''
+    k-mer Probability
+    '''
     
     if not with_gaps:
         seq = seq.replace('-','')
@@ -305,18 +331,21 @@ def FCGR(seq, k):
         
     return fcgr
 
-def ENV(seq, k=5, intensity_range=255):
+def ENV(seq, k=3, intensity_range=256):
     '''
     Extended Natural Vectors
     using Frequency Chaos Game Representation
     Wen et al. 2014
     '''
     
-    N = len(seq)
+    N = (2**k)**2 # len(seq)
     chaos = FCGR(seq, k)
-    chaos = np.nan_to_num(np.round(chaos/np.amax(chaos)*
-                     intensity_range)).astype(int)
-    X = {str(n):[] for n in range(intensity_range+1)}
+    chaos = np.nan_to_num(np.round(chaos / 
+                                   np.amax(chaos)*
+                                   (intensity_range-1)
+                                   )
+                         ).astype(int)
+    X = {str(n):[] for n in range(intensity_range)}
     for y, row in enumerate(chaos):
         for x, val in enumerate(row):
             X[str(val)].append([y,x])
@@ -333,12 +362,17 @@ def ENV(seq, k=5, intensity_range=255):
 
     D = dict()
     for r, s in rs:
-        for val in range(intensity_range+1):
+        for val in range(intensity_range):
             val = str(int(val))
             i, j = X[val][0] if len(X[val])==1 else np.array(X[val]).T
-            D[f'D{r}{s}_{val}'] = (np.sum(
-                ((i-µ1[f'µ1_{val}'])**r)*((j-µ2[f'µ2_{val}'])**s))
-                /(n[f'n_{val}']**(r+s))*(N**(r+s+1))) if n[f'n_{val}']!=0 else 0
+            D[f'D{r}{s}_{val}'] = (np.sum((((i-µ1[f'µ1_{val}'])**r) * 
+                                          ((j-µ2[f'µ2_{val}'])**s)
+                                          ) /
+                                          ((n[f'n_{val}']**(r+s)) *
+                                          (N**(r+s-1))
+                                          )
+                                         )
+                                  ) if n[f'n_{val}']!=0 else 0
     ENV = dict()
     for element in [n, µ1, µ2, D]:
         ENV.update(element)
