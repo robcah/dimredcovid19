@@ -1,5 +1,5 @@
-# LineageIdentificationByML
-Supporting materials for paper: Analysis and comprehensive lineage identification for SARS-CoV-2 genomes through scalable learning methods.
+# Dimensionality Reduction and Cluster identification of SARS-CoV-2 extracted features
+Supporting materials for paper: Unsupervised identification of significant lineages of SARS-CoV-2 through scalable machine learning methods.
 
 1. Install environment:\
 conda env create --file dimredcovid19.yml
