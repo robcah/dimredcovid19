@@ -163,4 +163,5 @@ dependencies:
     - scikit-learn==1.1.3
     - scipy==1.9.3
     - threadpoolctl==3.1.0
+    - natsort==8.4.0
 prefix: C:\Users\v95983rc\.conda\envs\dimredcovid19
