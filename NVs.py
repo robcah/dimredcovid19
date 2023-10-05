@@ -298,7 +298,7 @@ def KMP(seq, k, with_gaps=True):
     # seq length by kmers, 1 prevent error for gaps only
     kmers_seq = max(1, N-k+1) 
     
-    return {ky:float(vl)/kmers_seq for ky, vl in kmerCount(seq, k).items()}  
+    return {ky:float(vl)/kmers_seq for ky, vl in KMC(seq, k).items()}  
 
 def FCGR(seq, k):
     '''
@@ -314,7 +314,7 @@ def FCGR(seq, k):
     maxx = maxy = array_size
     posx = posy = 1
 
-    for key, value in kmerProb(seq, k).items():
+    for key, value in KMP(seq, k).items():
         for char in key:
             if char == "T": 
                 posx += maxx / 2
