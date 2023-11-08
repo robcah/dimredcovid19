@@ -43,3 +43,17 @@ Figure S2: 3d PaCMAP projection (parameters: $NB=51$, $MN=0.25$ and $FP=2$) of t
 2. [Bottom-left: Coloured by HDBSCAN labelling](https://raw.githack.com/robcah/dimredcovid19/main/3d_PaCMAP_Projections/3MNV_PaCMAP_1pctProjectionGISAID_ColouredBy-hdbscan.html)
 3. [Bottom-right: Coloured by CLASSIX labelling](https://raw.githack.com/robcah/dimredcovid19/main/3d_PaCMAP_Projections/3MNV_PaCMAP_1pctProjectionGISAID_ColouredBy-classix.html)
 
+Figure S3: 3d PaCMAP projection (parameters: $NB=51$, $MN=1$ and $FP=4$) of the whole GISAID dataset extracting the $anv$ feature
+1. [Top: Coulored by Scorpio labelling](https://raw.githack.com/robcah/dimredcovid19/main/3d_PaCMAP_Projections/ANV_PaCMAP_1pctProjectionGISAID_ColouredBy-scorpio.html)
+2. [Bottom-left: Coloured by HDBSCAN labelling](https://raw.githack.com/robcah/dimredcovid19/main/3d_PaCMAP_Projections/ANV_PaCMAP_1pctProjectionGISAID_ColouredBy-hdbscan.html)
+3. [Bottom-right: Coloured by CLASSIX labelling](https://raw.githack.com/robcah/dimredcovid19/main/3d_PaCMAP_Projections/ANV_PaCMAP_1pctProjectionGISAID_ColouredBy-classix.html)
+
+Figure S4: 3d PaCMAP projection (parameters: $NB=51$, $MN=1$ and $FP=2$) of the whole GISAID dataset extracting the $nv$ feature
+1. [Top: Coulored by Scorpio labelling](https://raw.githack.com/robcah/dimredcovid19/main/3d_PaCMAP_Projections/NV_PaCMAP_1pctProjectionGISAID_ColouredBy-scorpio.html)
+2. [Bottom-left: Coloured by HDBSCAN labelling](https://raw.githack.com/robcah/dimredcovid19/main/3d_PaCMAP_Projections/NV_PaCMAP_1pctProjectionGISAID_ColouredBy-hdbscan.html)
+3. [Bottom-right: Coloured by CLASSIX labelling](https://raw.githack.com/robcah/dimredcovid19/main/3d_PaCMAP_Projections/NV_PaCMAP_1pctProjectionGISAID_ColouredBy-classix.html)
+
+Figure S5: 3d PaCMAP projection (parameters: $NB=51$, $MN=50$ and $FP=4$) of the whole GISAID dataset extracting the $wmrv$ feature
+1. [Top: Coulored by Scorpio labelling](https://raw.githack.com/robcah/dimredcovid19/main/3d_PaCMAP_Projections/WMRV_PaCMAP_1pctProjectionGISAID_ColouredBy-scorpio.html)
+2. [Bottom-left: Coloured by HDBSCAN labelling](https://raw.githack.com/robcah/dimredcovid19/main/3d_PaCMAP_Projections/WMRV_PaCMAP_1pctProjectionGISAID_ColouredBy-hdbscan.html)
+3. [Bottom-right: Coloured by CLASSIX labelling](https://raw.githack.com/robcah/dimredcovid19/main/3d_PaCMAP_Projections/WMRV_PaCMAP_1pctProjectionGISAID_ColouredBy-classix.html)
