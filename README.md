@@ -10,7 +10,7 @@ conda env create --file dimredcovid19.yml
 2. If there are throubles installing PaCMAP module, install module ANNOY with the WHL file:\
 pip install annoy-1.17.0-cp310-cp310-win_amd64.whl
 
-3. Extract the folder 'GISAID_Subsample' from file GISAID_Subsample.7z within the same folder
+3. Extract the folder 'GISAID_Subsample' from file GISAID_Subsample.7z within the working folder
 
 4. Activate environment and run jupyter notebook:\
 conda activate dimredcovid19
