@@ -1,6 +1,7 @@
 ![DOI](https://zenodo.org/badge/534699890.svg)
 # Dimensionality Reduction and Cluster identification of SARS-CoV-2 extracted features
-## Exercise with a ~5% subsample of GISAID 
+## Replication exercise with a ~5% subsample of GISAID 
+### Due to the high volume of data used in the paper a subsample is offered to reproduce the pipeline.
 
 Supporting materials for paper: Unsupervised identification of significant lineages of SARS-CoV-2 through scalable machine learning methods.
 
