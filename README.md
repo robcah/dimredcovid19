@@ -21,7 +21,7 @@ Supporting materials for paper: Unsupervised identification of significant linea
 1. Follow the jupyter notebook `Dimensionality_Reduction_Covid19.ipynb` for more instructions:
 
 ## Interactive plots of paper: Unsupervised identification of significant lineages of SARS-CoV-2 through scalable machine learning methods.
-Figure 1: $3mc$ feature, 3d PaCMAP projection and clustering analysis of genetic topology of roughly 5.7 million. Plotting only 1% due to graphic processing costs.
+Figure 1: $3mc$ feature, 3d PaCMAP projection (parameters: $NB=51$, $MN=1$ and $FP=1$) and clustering analysis of genetic topology of roughly 5.7 million. Plotting only 1% due to graphic processing costs.
 - [Top: Coulored by Scorpio labelling](https://raw.githack.com/robcah/dimredcovid19/main/3d_PaCMAP_Projections/3MC_PaCMAP_1pctProjectionGISAID_ColouredBy-scorpio.html)
 - [Bottom-left: Coloured by HDBSCAN labelling](https://raw.githack.com/robcah/dimredcovid19/main/3d_PaCMAP_Projections/3MC_PaCMAP_1pctProjectionGISAID_ColouredBy-hdbscan.html)
 - [Bottom-right: Coloured by CLASSIX labelling](https://raw.githack.com/robcah/dimredcovid19/main/3d_PaCMAP_Projections/3MC_PaCMAP_1pctProjectionGISAID_ColouredBy-classix.html)
