@@ -32,7 +32,7 @@ Figure 2: 3d PaCMAP projection of specific structural protein regions for about 
 - [Gen M](https://raw.githack.com/robcah/dimredcovid19/main/3d_PaCMAP_Projections/3MC_M_PaCMAP_1pctProjectionGISAID_ColouredBy-scorpio.html)
 - [Gen E](https://raw.githack.com/robcah/dimredcovid19/main/3d_PaCMAP_Projections/3MC_E_PaCMAP_1pctProjectionGISAID_ColouredBy-scorpio.html)
 
-## Interactive plots of Suplemmentary Information of paper: : Unsupervised identification of significant lineages of SARS-CoV-2 through scalable machine learning methods.
+## Interactive plots of the suplemmentary Information of paper: Unsupervised identification of significant lineages of SARS-CoV-2 through scalable machine learning methods.
 
 Figure S1: $env$ feature (with $k=3$), 3d PaCMAP projection (parameters: $NB=51$, $MN=0.25$ and $FP=4$) of the whole GISAID dataset. Plotting only 1% due to graphic processing costs.
 - [Top: Coulored by Scorpio labelling](https://raw.githack.com/robcah/dimredcovid19/main/3d_PaCMAP_Projections/ENVk3_PaCMAP_1pctProjectionGISAID_ColouredBy-scorpio.html)
